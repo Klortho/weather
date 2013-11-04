@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="gov.ncbi.wt" />
+	<context:component-scan base-package="gov.ncbi.wt.cfm.weather" />
 	
 	
 	
