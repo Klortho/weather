@@ -16,14 +16,14 @@
     <spring:url var="action" value='/report' />
     <form:form method="GET" commandName="weather" action="${action}">
       <form:errors path="*" cssClass="errorblock" element="div" />
-<%--
       <div class="zipform"> 
         Zip code: 
+<%--
         <form:input path="zipCode" size="5" /> 
         <form:errors path="zipCode" cssClass="error" />   
+ --%>
         <input type="submit" value="go"/>
       </div>
- --%>
     </form:form>
 </body>
 </html>
