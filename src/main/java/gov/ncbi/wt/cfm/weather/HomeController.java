@@ -1,4 +1,4 @@
-package gov.ncbi.wt;
+package gov.ncbi.wt.cfm.weather;
 
 import java.text.DateFormat;
 import java.util.Date;
