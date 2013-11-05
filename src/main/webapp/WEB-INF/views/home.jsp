@@ -27,32 +27,26 @@
   </head>
   <body>
     <h1>Weather report</h1>
-  <%--
     <c:if test="${not empty weather.message}">
       <h3>
         <em><div class="climate nice">${weather.message}</div></em>
       </h3>
     </c:if>
-  --%>
-  <%--
     <p>
       The time now is ${serverTime}.
     </p>
-  --%>
+
 
     <spring:url var="action" value='/report' />
     <form:form method="GET" commandName="weather" action="${action}">
       <form:errors path="*" cssClass="errorblock" element="div" />
       <div class="zipform"> 
         Zip code: 
-      <%--
         <form:input path="zipCode" size="5" /> 
         <form:errors path="zipCode" cssClass="error" />   
         <input type="submit" value="go"/>
-      --%>
       </div>
 
-    <%--
       <c:if test="${weather.isSubmit()}">
         <h2>Current Conditions</h2>
         <div class="cc">
@@ -82,7 +76,6 @@
           </div>
         </div>
       </c:if>
-    --%>
     </form:form>
 </body>
 </html>
