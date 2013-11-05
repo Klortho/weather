@@ -27,14 +27,14 @@
   </head>
   <body>
     <h1>Weather report</h1>
+    <p>
+      The time now is ${serverTime}.
+    </p>
     <c:if test="${not empty weather.message}">
       <h3>
         <em><div class="climate nice">${weather.message}</div></em>
       </h3>
     </c:if>
-    <p>
-      The time now is ${serverTime}.
-    </p>
 
 
     <form:form method="GET" commandName="weather">

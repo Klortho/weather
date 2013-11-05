@@ -50,10 +50,10 @@ public class HomeController {
      * Where action happens
      */
     @RequestMapping(value = "/", method = RequestMethod.GET, params = {"zipcode"})
-    public String getReport(Locale locale, @Valid Weather weather, BindingResult result) {
+    public String getReport(Locale locale, ModelMap model, @Valid Weather weather, BindingResult result) {
         System.out.println("In home, weather is " + weather + ", zip code is " + weather.getZipcode());
         System.out.println("result.hasErrors() is " + result.hasErrors());
-        //getCurrentTime(locale, model);
+        getCurrentTime(locale, model);
         
         if (!result.hasErrors())
             YahooService.processRequest(weather);
