@@ -37,13 +37,12 @@
     </p>
 
 
-    <spring:url var="action" value='/report' />
-    <form:form method="GET" commandName="weather" action="${action}">
+    <form:form method="GET" commandName="weather">
       <form:errors path="*" cssClass="errorblock" element="div" />
       <div class="zipform"> 
         Zip code: 
-        <form:input path="zipCode" size="5" /> 
-        <form:errors path="zipCode" cssClass="error" />   
+        <form:input path="zipcode" size="5" /> 
+        <form:errors path="zipcode" cssClass="error" />   
         <input type="submit" value="go"/>
       </div>
 
@@ -56,14 +55,14 @@
               <img src="${weather.img}" alt="Image of current weather conditions" />
             </div>
             <div class="temp">${weather.temp} F</div>
-            <div class="zip">Zip: ${weather.zipCode}</div>
+            <div class="zip">Zip: ${weather.zipcode}</div>
           </div>
         </div>
   
         <h2>Forecast</h2>
         <div class="cf">
           <div class="cfwrap">
-            <h3>For the ${weather.zipCode} area</h3>
+            <h3>For the ${weather.zipcode} area</h3>
             <c:forEach var="yWF" items="${weather.yWF_list}">
               <dl>
                 <dt>${yWF.day}, ${yWF.date}</dt>

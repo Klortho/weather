@@ -22,32 +22,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, ModelMap model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate );
+    
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    
+    // Helper function:  get the time and add it to the model
+    private void getCurrentTime(Locale locale, ModelMap model) {
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+        String formattedDate = dateFormat.format(date);
+        logger.info("current time is " + formattedDate);
+        model.addAttribute("serverTime", formattedDate );
+    }
+    
+    /**
+     * Simply selects the home view to render by returning its name.
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Locale locale, ModelMap model) {
+        logger.info("Welcome home! The client locale is {}.", locale);
+        getCurrentTime(locale, model);
+        
+        model.addAttribute("weather", new Weather());
+        return "home";
+    }
 
-		model.addAttribute("weather", new Weather());
-		return "home";
-	}
-
-	/**
-	 * Where action happens
-	 */
-	@RequestMapping(value = "/report", method = RequestMethod.GET)
-	public String getReport(@Valid Weather weather, BindingResult result) {
-		
-		if (!result.hasErrors())
-			YahooService.processRequest(weather);
-		return "home";
-	}
+    /**
+     * Where action happens
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET, params = {"zipcode"})
+    public String getReport(Locale locale, @Valid Weather weather, BindingResult result) {
+        System.out.println("In home, weather is " + weather + ", zip code is " + weather.getZipcode());
+        System.out.println("result.hasErrors() is " + result.hasErrors());
+        //getCurrentTime(locale, model);
+        
+        if (!result.hasErrors())
+            YahooService.processRequest(weather);
+        return "home";
+    }
 }

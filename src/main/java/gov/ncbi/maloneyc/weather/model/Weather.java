@@ -21,7 +21,7 @@ public class Weather {
 
     @Digits(integer = 5, fraction = 0, message = "Zip Code must be numeric and should consist exactly 5 digits")
     @NotNull(message = "Enter Zip code, it can't be null!")
-    private Integer zipCode;
+    private Integer zipcode;
 
 
 
@@ -49,8 +49,8 @@ public class Weather {
         return yWF_list;
     }
 
-    public Integer getZipCode() {
-        return zipCode;
+    public Integer getZipcode() {
+        return zipcode;
     }
 
     public boolean isSubmit() {
@@ -85,12 +85,12 @@ public class Weather {
         this.yWF_list = yWF_list;
     }
 
-    public void setZipCode(Integer zipCode) {
-        this.zipCode = zipCode;
+    public void setZipcode(Integer zipcode) {
+        this.zipcode = zipcode;
     }
 
     @Override
     public String toString() {
-        return "Weather [zipCode=" + zipCode + "]";
+        return "Weather for zipcode " + zipcode;
     }
 }

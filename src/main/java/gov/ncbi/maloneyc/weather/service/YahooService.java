@@ -23,7 +23,7 @@ public class YahooService {
     	
     	StringBuilder xmlResponse = new StringBuilder();
     	try {
-    		URL url = new URL("http://weather.yahooapis.com/forecastrss?p="+weather.getZipCode());
+    		URL url = new URL("http://weather.yahooapis.com/forecastrss?p="+weather.getZipcode());
     		BufferedReader in = new BufferedReader(
     				new InputStreamReader(url.openStream()));
     		String inputLine = null;
