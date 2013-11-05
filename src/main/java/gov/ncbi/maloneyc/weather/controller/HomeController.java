@@ -59,4 +59,12 @@ public class HomeController {
             YahooService.processRequest(weather);
         return "home";
     }
+    
+    /**
+     * Try velocity template
+     */
+    @RequestMapping(value = "/try")
+    public String tryVelocity() {
+    	return "try";
+    }
 }
