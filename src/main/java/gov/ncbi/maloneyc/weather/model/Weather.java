@@ -1,4 +1,4 @@
-package gov.ncbi.WeatherApp.model;
+package gov.ncbi.maloneyc.weather.model;
 
 import java.util.List;
 

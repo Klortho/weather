@@ -1,8 +1,8 @@
-package gov.ncbi.WeatherApp.service;
+package gov.ncbi.maloneyc.weather.service;
 
-import gov.ncbi.WeatherApp.model.Channel;
-import gov.ncbi.WeatherApp.model.Rss;
-import gov.ncbi.WeatherApp.model.Weather;
+import gov.ncbi.maloneyc.weather.model.Channel;
+import gov.ncbi.maloneyc.weather.model.Rss;
+import gov.ncbi.maloneyc.weather.model.Weather;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

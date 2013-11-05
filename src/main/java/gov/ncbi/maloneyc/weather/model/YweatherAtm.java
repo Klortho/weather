@@ -1,14 +1,15 @@
-package gov.ncbi.WeatherApp.model;
+package gov.ncbi.maloneyc.weather.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 
-@XStreamAlias("yweather:wind")
+@XStreamAlias("yweather:atmosphere")
 @XStreamConverter(value=ToAttributedValueConverter.class, strings={"message"})
-public class YweatherWind {
+public class YweatherAtm {
 	String message;
-	Integer chill;
-	Integer direction;
-	Integer speed;
+	Integer humidity;
+	String visibility;
+	String pressure;
+	Integer rising;
 }

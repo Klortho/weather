@@ -1,4 +1,4 @@
-package gov.ncbi.WeatherApp.model;
+package gov.ncbi.maloneyc.weather.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;

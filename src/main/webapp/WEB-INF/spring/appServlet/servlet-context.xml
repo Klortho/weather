@@ -26,6 +26,6 @@
   </beans:bean>
 
   <!-- Where the component scanner should start looking for annotations -->
-  <context:component-scan base-package="gov.ncbi.WeatherApp" />
+  <context:component-scan base-package="gov.ncbi.maloneyc.weather" />
 
 </beans:beans>

@@ -1,20 +1,14 @@
-package gov.ncbi.WeatherApp.model;
+package gov.ncbi.maloneyc.weather.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 
-@XStreamAlias("yweather:location")
+@XStreamAlias("yweather:wind")
 @XStreamConverter(value=ToAttributedValueConverter.class, strings={"message"})
-public class YweatherLocation {
+public class YweatherWind {
 	String message;
-	String city;
-	public String getCity() {
-		return city;
-	}
-	public String getRegion() {
-		return region;
-	}
-	String region;
-	String country;
+	Integer chill;
+	Integer direction;
+	Integer speed;
 }

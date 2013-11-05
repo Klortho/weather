@@ -1,7 +1,7 @@
-package gov.ncbi.WeatherApp.controller;
+package gov.ncbi.maloneyc.weather.controller;
 
-import gov.ncbi.WeatherApp.model.Weather;
-import gov.ncbi.WeatherApp.service.YahooService;
+import gov.ncbi.maloneyc.weather.model.Weather;
+import gov.ncbi.maloneyc.weather.service.YahooService;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -1,13 +1,17 @@
-package gov.ncbi.WeatherApp.model;
+package gov.ncbi.maloneyc.weather.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 
-@XStreamAlias("yweather:astronomy")
+@XStreamAlias("yweather:units")
 @XStreamConverter(value=ToAttributedValueConverter.class, strings={"message"})
-public class YweatherAst {
+public class YweatherUnits {
+	
 	String message;
-	String sunrise;
-	String sunset;
+	@XStreamAlias("temperature")
+	String temp;
+	String distance;
+	String pressure;
+	String speed;
 }
