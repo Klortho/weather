@@ -29,5 +29,15 @@ public class HomeController {
 		model.addAttribute("weather", new Weather());
 		return "home";
 	}
-	
+
+	/**
+	 * Where action happens
+	@RequestMapping(value = "/report", method = RequestMethod.GET)
+	public String getReport(@Valid Weather weather, BindingResult result) {
+		
+		if (!result.hasErrors())
+			YahooService.processRequest(weather);
+		return "home";
+	}
+	 */
 }
